@@ -1,0 +1,39 @@
+extends layout
+block main 
+	main
+		.section.main-block
+			.container 
+				.main-block__wrap
+					.main-block__head
+						h1.main-block__title Больше <br> чем Детский сад
+						p.main-block__subtitle Доверьте заботу о развитии ваших детей
+						a.btn.btn--default.btn--main-block.open-feedback2 Запишитесь на экскурсию
+			include templates/advantages
+		include templates/offers
+
+		section.section.contacts-block 
+			.container 
+				.section__head 
+					h2.section__title Загородная экология в центре Москвы
+					p.section__subtitle Ул. Староволынская д. 12, корп. 5
+					a.btn.btn--default(href="https://yandex.ru/maps/?rtext=~55.715484,37.479034" target="_blank") Маршрут на Я. Картах
+				.contacts-block__wrap 
+					ul.contacts-block__list 
+						li 
+							p Закрытая территория с охраной, въездом по пропускам<br> и 3-мя детскими площадками, где дважды в день играют <br> и изучают окружающий мир дети
+						li 
+							p В окружении 3-х парков: долины реки Сетунь, Парка Победы<br> и Матвеевского леса. Воздух — как за городом
+						li 
+							p 3-5 минут на машине от Кутузовского проспекта<br> или Аминьевского шоссе
+					.contacts-block__map#map
+						<iframe src="https://yandex.ru/map-widget/v1/?display-text=%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%B4%D0%B5%D1%82%D0%B8&ll=37.478792%2C55.715139&mode=search&oid=157108516947&ol=biz&sll=37.617700%2C55.755863&sspn=1.312866%2C0.510350&text=%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%B4%D0%B5%D1%82%D0%B8&utm_source=share&z=11" style="position:relative;"></iframe>
+
+		include templates/review
+		include templates/teachers
+
+		section.section.reviews 
+			.container 
+				.section__head 	
+					h2.section__title 800 выпускников и вот такие честные отзывы их родителей
+				<review-lab data-widgetid="66eef2aeeb335c8a0f9eed26"></review-lab>
+				<script src="https://app.reviewlab.ru/widget/index-es2015.js" defer></script>
