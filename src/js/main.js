@@ -1,6 +1,11 @@
 
+
 // custome code
 document.addEventListener('DOMContentLoaded', function () {
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		header: 'header',
+	});
+
 	const swiper = new Swiper('.main-slider', {
 		spaceBetween: 20,
 		pagination: {
@@ -24,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			prevEl: '.swiper-teachers .swiper-button-prev',
 		},
 		breakpoints: {
-			376: {
+			768: {
 				slidesPerView: 2,
 			},
 			1024: {
@@ -112,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			},
 		}
 	})
+
+
 
 	const body = document.querySelector('body')
 	const menu = document.querySelector('.burger')
@@ -217,8 +224,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		input.addEventListener("keydown", mask, false);
 	});
 
-	AOS.init();
-
 	const inputsTel = document.querySelectorAll('.tel')
 
 	inputsTel.forEach(input => {
@@ -253,25 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 $(document).ready(function () {
-
-	$('a[href^="#"]').on('click', function () {
-		$('.overlay').removeClass('active')
-		$('.header__aside').removeClass('active')
-		$('body').removeClass('hidden')
-		$('.burger').removeClass('active')
-		var target = $(this.hash);
-		if (target.length) {
-			if (window.innerWidth > 1023) {
-				$('html, body').animate({ scrollTop: target.offset().top - 300 }, 1000);
-				return false;  // Это предотвращает стандартное поведение якоря
-			} else {
-				$('html, body').animate({ scrollTop: target.offset().top - 200 }, 1000);
-				return false;  // Это предотвращает стандартное поведение якоря
-			}
-		}
-	});
-
-
 	// самолетик
 	function animateBlock(entries, observer) {
 		// нужно обработать все, ведь попасть в область просмотра могут несколько блоков
@@ -291,36 +277,4 @@ $(document).ready(function () {
 	let elem = $('.teachers__adv');
 	var elemObserver = new IntersectionObserver(animateBlock, options);
 	elem.each((i, e) => elemObserver.observe(e));
-});
-
-// (function () {
-
-// 	function scrollHorizontally(e) {
-
-// 		var scrollPos = this.scrollLeft;  // Сколько прокручено по горизонтали, до прокрутки (не перемещать эту строку!)
-
-// 		// Горизонтальная прокрутка
-// 		e = window.event || e;
-// 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-// 		this.scrollLeft -= (delta * 60); // Multiplied by 10
-
-// 		var widthElem = this.scrollWidth; // Ширина всего элемента
-// 		var widthBrowser = document.documentElement.clientWidth;  // Ширина окна минус размер вертикального скролла
-
-
-// 		// Прокрутка вверх, но элемент уже в крайней левой позиции, то двигаемся вверх
-// 		if ((delta == 1) && (this.scrollLeft == 0)) return;
-// 		// Прокрутка вниз, но элемент виден полностью. Или элемент до конца прокручен в правый край
-// 		if ((widthBrowser >= widthElem) || (scrollPos == this.scrollLeft)) return;
-
-// 		e.preventDefault(); // запрещает прокрутку по вертикали
-
-// 	}
-
-// 	var elems = document.querySelectorAll('.blockAn');
-// 	for (var a = 0; a < elems.length; a++) {
-// 		elems[a].addEventListener("mousewheel", scrollHorizontally, false);     // IE9, Chrome, Safari, Opera
-// 		elems[a].addEventListener("DOMMouseScroll", scrollHorizontally, false); // Firefox
-// 	}
-
-// })();
+})

@@ -3,24 +3,13 @@
 	background-color: #F5F1EF;
 	z-index: 2;
 	width: 100%;
-	min-height: 130px;
-	display: flex;
-	align-items: center;
-	// margin-bottom: 75px;
-	@media(max-width: 1023px) {
-		min-height: 80px;
-	}
 }
 
 .header__wrap {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	min-height: 80px;
-}
-
-.header__logo {
-	margin-right: 20px;
+	padding: 20px 0;
 }
 
 .header__nav {
@@ -44,7 +33,9 @@
 			margin-right: 0;
 			margin-bottom: 32px;
 		}
-		&:hover {
+
+		&:hover,
+		&.active {
 			color: var(--color-green);
 		}
 	}
@@ -56,7 +47,7 @@
 }
 
 .header__tel {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 500;
 	color: var(--color-green);
 	margin-left: 24px;

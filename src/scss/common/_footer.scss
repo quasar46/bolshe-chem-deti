@@ -31,6 +31,9 @@
 		flex-direction: column;
 		gap: 24px;
 	}
+	@media(max-width: 768px) {
+		text-align: center;
+	}
 }
 
 .footer__aside {
@@ -38,6 +41,9 @@
 	flex-direction: column;
 	gap: 22px;
 	flex: 0;
+	@media(max-width: 768px) {
+		align-items: center;
+	}
 }
 
 .footer__politic {
@@ -115,6 +121,9 @@
 	@media(max-width: 1023px) {
 		flex-direction: column;
 		align-items: flex-start;
+	}
+	@media(max-width: 768px) {
+		align-items: center;
 	}
 }
 
